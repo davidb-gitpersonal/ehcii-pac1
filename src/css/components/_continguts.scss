@@ -1,0 +1,68 @@
+@use '../settings' as *;
+@use '../tools';
+@use '../objects';
+
+@mixin _contingut {
+   color: white;
+
+   padding: 0.5em;
+}
+
+.contingut-dadespersonals {
+   @extend .parrilla-columnes;
+
+}
+
+.contingut-dadapersonal {
+   @include _contingut;
+   background-color: $color-bg--cap2;
+   .dada {
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+   }
+   .valor {
+      text-align: center;
+   }
+}
+
+.contingut-dadesacademiques {
+   @include tools.bloc-vertical($color-bg--cap2);
+   align-items: flex-end;
+
+   > * {
+      border-radius: 0.5rem;
+   }
+}
+
+.contingut-dadaacademica {
+   @include _contingut;
+   display: inline-block;
+
+   .estudis {
+      text-align: left;
+   }
+   .centre,
+   .dates {
+      text-align: right;
+   }
+}
+
+.contingut-experienciesprofessionals {
+   @extend .parrilla-columnes;
+   grid-template-columns: 1fr;
+}
+
+.contingut-experienciaprofessional {
+   @include _contingut;
+   background-color: $color-bg--cap2;
+   .descripcio {
+      border-bottom: 1px solid $color-font--cap2;
+   }
+   .tasques-text {
+      font-style: italic;
+   }
+   .tasques-llista {
+      list-style: none;
+   }
+}

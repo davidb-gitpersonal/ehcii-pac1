@@ -1,0 +1,55 @@
+@use '../settings' as *;
+
+$_gap-extern: 1rem;
+
+.capsalera {
+   height: 20vh;
+   width: 100%;
+   background-color: $color-bg--cap1;
+   background: linear-gradient(
+      to bottom,
+      $color-bg--cap1 0%,
+      $color-bg--cap1 50%,
+      $color-bg--cap2 50%,
+      $color-bg--cap2 100%);
+   position: relative;
+}
+
+.cap-imatge {
+   position: absolute;
+   top: 25%;
+   left: $_gap-extern;
+
+   height: 10vh;
+   width: 10vh;
+   border: 1px solid white;
+   border-radius: 50%;
+   background-color: transparent;
+
+   object-fit: cover;
+   z-index: 10;
+}
+
+.cap-titol {
+   position: absolute;
+   top: calc(50% - 2rem);
+   right: $_gap-extern;
+
+   font-size: 2rem;
+   color: $color-font--cap1;
+
+   margin: 0;
+   padding: 0;
+}
+
+.cap-nom {
+   position: absolute;
+   top: 50%;
+   right: $_gap-extern;
+
+   font-size: 1.5rem;
+   color: $color-font--cap1;
+
+   margin: 0;
+   padding: 0;
+}

@@ -1,0 +1,42 @@
+// Innecessàries per la PAC però com a exemple de que prodria anar en aquest arxiu
+@use './tools';
+
+.grup {
+   display: flex;
+   flex-flow: row wrap;
+   margin-top: -0.5em;
+   > * {
+      margin-top: 0.5em;
+   }
+   > *:not(:last-child) {
+      margin-right: 0.5em;
+   }
+}
+
+.bloc {
+   @include tools.bloc-vertical();
+}
+
+.parrilla-columnes {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   @media only screen and (max-width: 300px) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   }
+   column-gap: 2em;
+   row-gap: 1em;
+   /* https://stylelint.io/user-guide/rules/list/no-descending-specificity */
+   /* It may be possible to restructure your CSS to remove the error, otherwise it is
+   recommended that you disable the rule for that line and leave a comment saying why
+   the error should be ignored. Note that disabling the rule will cause additional valid
+   errors from being reported. */
+   /* stylelint-disable no-descending-specificity */
+   /* evitar un error en stylelint en l'ordre del selector contra
+   > *:not(:last-child) de les classes anteriors */
+   > * {
+      border-radius: 0.5rem;
+   }
+   /* stylelint-enable no-descending-specificity */
+}
+
+

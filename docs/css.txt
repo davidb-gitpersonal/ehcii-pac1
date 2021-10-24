@@ -1,0 +1,6 @@
+Ordre propietats:
+   => Posicionament
+   => Box-model
+   => Tipografia
+   => Visualització
+   => Altres

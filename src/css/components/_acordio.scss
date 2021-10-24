@@ -1,0 +1,18 @@
+@use '../settings' as *;
+@use '../tools';
+
+.acordio {
+   @include tools.acordio($color-bg--secundari, $color-bg--cap1);
+   &.desplegat {
+      .acordio-cap {
+         color: $color-bg--cap2;
+         i {
+            transform: rotate(180deg);
+         }
+      }
+      .acordio-cos {
+         display: block;
+      }
+   }
+}
+
